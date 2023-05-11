@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tural\\source\\repos\\Pronia\\Pronia\\Pronia.csproj": {}
+    "C:\\Users\\ClassTime\\source\\repos\\ProniaAdmin1\\Pronia\\Pronia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tural\\source\\repos\\Pronia\\Pronia\\Pronia.csproj": {
+    "C:\\Users\\ClassTime\\source\\repos\\ProniaAdmin1\\Pronia\\Pronia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tural\\source\\repos\\Pronia\\Pronia\\Pronia.csproj",
+        "projectUniqueName": "C:\\Users\\ClassTime\\source\\repos\\ProniaAdmin1\\Pronia\\Pronia.csproj",
         "projectName": "Pronia",
-        "projectPath": "C:\\Users\\tural\\source\\repos\\Pronia\\Pronia\\Pronia.csproj",
-        "packagesPath": "C:\\Users\\tural\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tural\\source\\repos\\Pronia\\Pronia\\obj\\",
+        "projectPath": "C:\\Users\\ClassTime\\source\\repos\\ProniaAdmin1\\Pronia\\Pronia.csproj",
+        "packagesPath": "C:\\Users\\ClassTime\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ClassTime\\source\\repos\\ProniaAdmin1\\Pronia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tural\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ClassTime\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

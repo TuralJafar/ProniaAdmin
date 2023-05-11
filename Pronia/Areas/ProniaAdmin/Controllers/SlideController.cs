@@ -13,6 +13,7 @@ namespace ProniaBB102Web.Areas.ProniaAdmin.Controllers
         public SlideController(AppDbContext context)
         {
             _context = context;
+            
         }
         public async Task<IActionResult> Index()
         {List<Slide>slides=await _context.Slides.ToListAsync();
@@ -62,6 +63,7 @@ namespace ProniaBB102Web.Areas.ProniaAdmin.Controllers
             await _context.Slides.AddAsync(slide);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
+           
         }
         public IActionResult Update()
         {
