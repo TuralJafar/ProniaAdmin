@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tural\\source\\repos\\proniaadmin\\Pronia\\Pronia.csproj": {}
+    "C:\\Users\\tural\\source\\repos\\Pronia\\Pronia\\Pronia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tural\\source\\repos\\proniaadmin\\Pronia\\Pronia.csproj": {
+    "C:\\Users\\tural\\source\\repos\\Pronia\\Pronia\\Pronia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tural\\source\\repos\\proniaadmin\\Pronia\\Pronia.csproj",
+        "projectUniqueName": "C:\\Users\\tural\\source\\repos\\Pronia\\Pronia\\Pronia.csproj",
         "projectName": "Pronia",
-        "projectPath": "C:\\Users\\tural\\source\\repos\\proniaadmin\\Pronia\\Pronia.csproj",
+        "projectPath": "C:\\Users\\tural\\source\\repos\\Pronia\\Pronia\\Pronia.csproj",
         "packagesPath": "C:\\Users\\tural\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tural\\source\\repos\\proniaadmin\\Pronia\\obj\\",
+        "outputPath": "C:\\Users\\tural\\source\\repos\\Pronia\\Pronia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tural\\AppData\\Roaming\\NuGet\\NuGet.Config",
