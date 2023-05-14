@@ -3,75 +3,152 @@ using Microsoft.EntityFrameworkCore;
 using Pronia.DAL;
 using Pronia.mModels;
 
-namespace ProniaBB102Web.Areas.ProniaAdmin.Controllers
+using Pronia.Utiliters.Extensions;
+using Pronia.ViewModels;
+using Pronia.ViewModels.Slides;
+
+namespace Pronia.Areas.ProniaAdmin.Controllers
 {
     [Area("ProniaAdmin")]
+    [AutoValidateAntiforgeryToken]
     public class SlideController : Controller
-    {   private readonly AppDbContext _context;
-      
+    {
+        private readonly AppDbContext _context;
 
-        public SlideController(AppDbContext context)
+        private readonly IWebHostEnvironment _env;
+        private object slideVM;
+
+        public SlideController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
-            
+            _env = env;
         }
         public async Task<IActionResult> Index()
-        {List<Slide>slides=await _context.Slides.ToListAsync();
+        {
+            List<Slide> slides = await _context.Slides.ToListAsync();
+
+
             return View(slides);
         }
         public IActionResult Create()
         {
             return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> Create(Slide slide)
-        {
-            if (slide.Photo != null)
-            {
-                ModelState.AddModelError("Photo", "Sekil hissesi bos ola bilmez");
-                return View();
-            }
-            if(!slide.Photo.ContentType.Contains("image/")) 
-            {
-                ModelState.AddModelError("Photo", "Sekil daxil edin");
-                return View();
-            }
-            if (slide.Photo.Length > 2000 * 1024)
-            {
-                ModelState.AddModelError("Photo", "sekil 2mbdan coxdu");
-            }
-            if (slide.Id == slide.Id)
-            {
-                return RedirectToAction("Index");
-            }
 
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(CreateSlideVM slideVM)
+        {
             if (!ModelState.IsValid)
             {
                 return View();
             }
-            bool result = _context.Categories.Any(c => c.Name.Trim().ToLower() == slide.Description.Trim().ToLower() && c.Id !=slide.Id);
+            //if (slide.Photo == null)
+            //{
+            //    ModelState.AddModelError("Photo", "Shekil hissesi bosh ola bilmez");
+            //    return View();
+            //}
 
-            if (result)
+            if (!slideVM.Photo.CheckFileType("image/"))
             {
-                ModelState.AddModelError("Id", "Bu id-de categoriya artiq movcuddur");
+                ModelState.AddModelError("Photo", "Gonderilen file-nin tipi uygun deyil");
                 return View();
             }
-            FileStream file = new FileStream(@"C:\Users\tural\source\repos\Pronia\Pronia\wwwroot\assets\images\website-images\" + slide.Photo.FileName, FileMode.Create);
-            await slide.Photo.CopyToAsync(file);
-            slide.Image = slide.Photo.FileName;
+            if (!slideVM.Photo.CheckFileSize(200))
+            {
+                ModelState.AddModelError("Photo", "Gonderilen file-nin hecmi 200 kb-den boyuk olmamalidir");
+                return View();
+            }
+            Slide slide = new Slide()
+            {
+                Title = slideVM.Title,
+                SubTitle = slideVM.SubTitle,
+                Description = slideVM.Description,
+                Order = slideVM.Order,
+            };
+            slide.Image = await slideVM.Photo.CreateFileAsync(_env.WebRootPath, @"assets/images/website-images");
 
             await _context.Slides.AddAsync(slide);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
-           
+            return RedirectToAction(nameof(Index));
         }
-        public IActionResult Update()
+        public async Task<IActionResult> Update(int? id)
         {
-            return View();
+            if (id == null || id < 1) return BadRequest();
+
+            Slide slide = await _context.Slides.FirstOrDefaultAsync(s => s.Id == id);
+
+            if (slide == null) return NotFound();
+
+            
+            UpdateSlideVM slideVM = new UpdateSlideVM()
+            {
+                Title = slide.Title,
+                SubTitle = slide.SubTitle,
+                Description = slide.Description,
+                Order = slide.Order,
+                Image = slide.Image,
+                
+            };
+            return View(slideVM);
         }
-        public IActionResult Delete()
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int? id, UpdateSlideVM slideVM)
         {
-            return View();
+
+            if (id == null || id < 1) return BadRequest();
+
+            Slide existed = await _context.Slides.FirstOrDefaultAsync(s => s.Id == id);
+
+            if (existed == null) return NotFound();
+
+
+
+
+            if (slideVM.Photo != null)
+            {
+                if (!slideVM.Photo.CheckFileType("image/"))
+                {
+                    ModelState.AddModelError("photo", "file tipi uygun deyil");
+                    return View();
+                }
+                if (!slideVM.Photo.CheckFileSize(200))
+                {
+                    ModelState.AddModelError("photo", "file hecmi 200 kb den cox olmamalidir");
+                    
+                    return View();
+                }
+                existed.Image.DeleteFile(_env.WebRootPath, @"assets/images/website-images");
+                existed.Image = await slideVM.Photo.CreateFileAsync(_env.WebRootPath, @"assets/images/website-images");
+            }
+
+            existed.Order = slideVM.Order;
+            existed.Title = slideVM.Title;
+            existed.SubTitle = slideVM.SubTitle;
+            existed.Description = slideVM.Description;
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+        }
+
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null || id < 1) return BadRequest();
+
+            Slide slide = await _context.Slides.FirstOrDefaultAsync(s => s.Id == id);
+
+            if (slide == null) return NotFound();
+
+            slide.Image.DeleteFile(_env.WebRootPath, @"assets/images/website-images");
+
+            _context.Slides.Remove(slide);
+            await _context.SaveChangesAsync();
+            //return View();
+          return RedirectToAction(nameof(Index));
         }
     }
 }

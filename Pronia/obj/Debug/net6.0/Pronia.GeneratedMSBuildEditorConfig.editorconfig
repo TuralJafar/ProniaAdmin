@@ -9,69 +9,81 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Pronia
 build_property.RootNamespace = Pronia
-build_property.ProjectDir = C:\Users\ClassTime\source\repos\ProniaAdmin1\Pronia\
+build_property.ProjectDir = C:\Users\tural\source\repos\ProniaAdmin12\Pronia\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ClassTime\source\repos\ProniaAdmin1\Pronia
+build_property.MSBuildProjectDirectory = C:\Users\tural\source\repos\ProniaAdmin12\Pronia
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Areas/ProniaAdmin/Views/Category/Create.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Areas/ProniaAdmin/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvbmlhQWRtaW5cVmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Areas/ProniaAdmin/Views/Category/Index.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Areas/ProniaAdmin/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvbmlhQWRtaW5cVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Areas/ProniaAdmin/Views/Category/Update.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Areas/ProniaAdmin/Views/Category/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvbmlhQWRtaW5cVmlld3NcQ2F0ZWdvcnlcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Areas/ProniaAdmin/Views/Home/Index.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Areas/ProniaAdmin/Views/Employee/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvbmlhQWRtaW5cVmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Areas/ProniaAdmin/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvbmlhQWRtaW5cVmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Areas/ProniaAdmin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvbmlhQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Areas/ProniaAdmin/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Areas/ProniaAdmin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvbmlhQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Areas/ProniaAdmin/Views/Slide/Create.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Areas/ProniaAdmin/Views/Slide/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvbmlhQWRtaW5cVmlld3NcU2xpZGVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Areas/ProniaAdmin/Views/Slide/Index.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Areas/ProniaAdmin/Views/Slide/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvbmlhQWRtaW5cVmlld3NcU2xpZGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Areas/ProniaAdmin/Views/_ViewImports.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Areas/ProniaAdmin/Views/Slide/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvbmlhQWRtaW5cVmlld3NcU2xpZGVcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Areas/ProniaAdmin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvbmlhQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Areas/ProniaAdmin/Views/_ViewStart.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Areas/ProniaAdmin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvbmlhQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Views/Home/Index.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Views/Shared/_Layout.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Views/Shop/Details.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Views/Shop/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Views/Shop/Index.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Views/Shop/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Views/_ViewImports.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ClassTime/source/repos/ProniaAdmin1/Pronia/Views/_ViewStart.cshtml]
+[C:/Users/tural/source/repos/ProniaAdmin12/Pronia/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
