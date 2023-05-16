@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Pronia.DAL;
+using Pronia.Services;
 
 namespace Pronia
 {
@@ -13,6 +14,7 @@ namespace Pronia
             {
             opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
             });
+            builder.Services.AddScoped<LayoutService>();
             var app = builder.Build();
             app.UseStaticFiles();
             app.MapControllerRoute(

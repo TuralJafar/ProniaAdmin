@@ -1,4 +1,5 @@
-﻿@model Employee
+﻿@using Pronia.ViewModels.Employee;
+@model UpdateEmployeeVM
 
 <div class="container-fluid page-body-wrapper">
 
@@ -13,30 +14,30 @@
                             <form class="forms-sample" method="post">
                                 <div class="form-group">
                                     <label asp-for="Name">Name</label>
-                                    <input asp-for="Name" class="form-control" placeholder="Name">
+                                    <input asp-for="Name" class="form-control" placeholder="Name" value="@Model.Name" >
                                     <span class="text-danger" asp-validation-for="Name"></span>
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="Surname">Surname</label>
-                                    <input asp-for="Surname" class="form-control" placeholder="Surname">
+                                    <input asp-for="Surname" class="form-control" placeholder="Surname" value="@Model.Surname" >
                                     <span class="text-danger" asp-validation-for="Surname"></span>
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="PositionId">Position</label>
-                                    @*<select asp-for="PositionId" class="form-control" >
-                                        <option disabled selected>Select Position</option>
-                                        @foreach(Position position in ViewBag.Positions)
-                                        {
-                                            <option value="@position.Id">@position.Name</option>
-                                        }
-                                    </select>*@
-                                    <select asp-for="PositionId" class="form control" asp-items="new SelectList(ViewBag.Positions,nameof(Position.Id),nameof(Position.Name))">
-                                       <option disabled selected>Selected Position</option>
+                                    <select asp-for="PositionId" class="form-control" >
+                                    <option disabled selected>select position</option>
+                                    @foreach(Position position in ViewBag.Positions)
+                                    {
+                                    <option value="@position.Id">@position.Name</option>
+                                    }
                                     </select>
-                                    <span class="text-danger" asp-validation-for="Position"></span>
+                                  @*  <select asp-for="PositionId" class="form control" asp-items="new SelectList(ViewBag.Positions,nameof(Position.Id),nameof(Position.Name))">
+                                        op
+                                    </select>*@
+                                    <span class="text-danger" asp-validation-for="PositionId"></span>
                                 </div>
                                 <button type="submit" class="btn btn-primary me-2">Create</button>
-                                <a asp-action="index" asp-controller="category" class="btn btn-light">Cancel</a>
+                                <a asp-action="index" asp-controller="update" class="btn btn-light">Cancel</a>
                             </form>
                         </div>
                     </div>

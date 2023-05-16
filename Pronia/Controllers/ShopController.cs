@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Pronia.DAL;
 using Pronia.mModels;
-
+using Pronia.ViewModels;
 
 namespace Pronia.Controllers
 {
@@ -29,9 +29,13 @@ namespace Pronia.Controllers
                 return NotFound();
             }
 
-            List<Product>products=await _context.Products.Where(p=>p.CategoryId==product.CategoryId&&p.Id!=product.Id).ToListAsync();   
-
-            return View(product);
+            List<Product>products=await _context.Products.Where(p=>p.CategoryId==product.CategoryId&&p.Id!=product.Id).ToListAsync();
+            DetailVM detailVM = new DetailVM()
+            {
+                Product = product,
+                Products = products,
+            };
+            return View();
         }
 
     }

@@ -1,4 +1,4 @@
-﻿ @model Product
+﻿ @model DetailVM
 @{
     int count = 0;
 }
@@ -36,7 +36,7 @@
                         <div class="thumbs-arrow-holder">
                             <div class="swiper-container single-product-thumbs">
                                 <div class="swiper-wrapper">
-                                    @foreach (ProductImage img in Model.ProductImages){
+                                    @foreach (ProductImage img in Model.Product.ProductImages){
                                     <a href="#" class="swiper-slide">
                                         <img class="img-full"
                                                  src="~/assets/images//website-images/@img.ImageUrl"
@@ -60,7 +60,7 @@
                 </div>
                 <div class="col-lg-6 pt-5 pt-lg-0">
                     <div class="single-product-content">
-                        <h2 class="title">@Model.Name</h2>
+                        <h2 class="title">@Model.Product.Name</h2>
                         <div class="price-box">
                             <span class="new-price">$100</span>
                         </div>
@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <p class="short-desc">
-                            @(Model.Description.Length>100?Model.Description.Substring(0, 100) + "..." : Model.Description)
+                            @(Model.Product.Description.Length>100?Model.Product.Description.Substring(0, 100) + "..." : Model.Product.Description)
                         </p>
                         <ul class="quantity-with-btn">
                             <li class="quantity">
@@ -154,7 +154,7 @@
                             <span class="title">Categories :</span>
                             <ul>
                                 <li>
-                                    <a href="#">@Model.Category.Name
+                                    <a href="#">@Model.Product.Category.Name
                                 </li>
                                 
                             </ul>
@@ -162,11 +162,11 @@
                         <div class="product-category product-tags">
                             <span class="title">Tags :</span>
                             <ul>
-                                @foreach (ProductTag pt in Model.ProductTags)
+                                @foreach (ProductTag pt in Model.Product.ProductTags)
                                 {
                                     count++;
                                     <li>
-                                        <a href="#">@pt.Tag.Name@(Model.ProductTags.Count==count)</a>
+                                        <a href="#">@pt.Tag.Name@(Model.Product.ProductTags.Count==count)</a>
                                     </li>
                                 }
                                 
@@ -439,6 +439,7 @@
 
     <!-- Begin Product Area -->
     <div class="product-area section-space-y-axis-90">
+        @await Html.PartialAsync("_ProductPartialView",Model.Products)
         <div class="container">
             <div class="row">
                 <div class="section-title-wrap without-tab">
