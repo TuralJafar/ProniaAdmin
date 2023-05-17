@@ -9,6 +9,10 @@ namespace Pronia
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddSession(option =>
+            {
+                option.IdleTimeout = TimeSpan.FromSeconds(10);
+            });
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<AppDbContext>(opt =>
             {
@@ -16,6 +20,7 @@ namespace Pronia
             });
             builder.Services.AddScoped<LayoutService>();
             var app = builder.Build();
+            app.UseSession();
             app.UseStaticFiles();
             app.MapControllerRoute(
                name: "Areas",

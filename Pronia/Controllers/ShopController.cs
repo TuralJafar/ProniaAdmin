@@ -15,10 +15,15 @@ namespace Pronia.Controllers
         }
         public IActionResult Index()
         {
+           
             return View();
         }
         public async Task<IActionResult> Details(int id)
-        {
+        { //  string result=Request.Cookies["Name"].ToString();
+          //    if(string.IsNullOrEmpty(result) )
+          //    {
+          //        return NotFound();
+          //    }
             Product product=await _context.Products
                 .Include(p => p.ProductImages)
                 .Include(p => p.Category)
