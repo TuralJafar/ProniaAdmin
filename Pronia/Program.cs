@@ -13,6 +13,7 @@ namespace Pronia
             {
                 option.IdleTimeout = TimeSpan.FromSeconds(10);
             });
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<AppDbContext>(opt =>
             {
