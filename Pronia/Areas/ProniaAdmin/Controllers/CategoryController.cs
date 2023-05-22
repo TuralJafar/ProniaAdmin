@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pronia.DAL;
 using Pronia.mModels;
@@ -6,6 +7,8 @@ using Pronia.mModels;
 namespace Pronia.Areas.ProniaAdmin.Controllers
 {
         [Area("ProniaAdmin")]
+    [AutoValidateAntiforgeryToken]
+    [Authorize(Roles =$"Admin")]
         public class CategoryController : Controller
         {
             private readonly AppDbContext _context;
